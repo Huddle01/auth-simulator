@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@huddle01/token-gating": "workspace:*",
+    "@huddle01/token-gating": "^0.0.3",
     "@rainbow-me/rainbowkit": "^0.12.5",
     "@types/node": "18.15.11",
     "@types/react": "18.0.32",
