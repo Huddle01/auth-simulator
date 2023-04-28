@@ -1,24 +1,24 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 import {
   getAccessToken,
   getLensAccessToken,
   getLensMessage,
   getMessage,
-} from '@huddle01/token-gating';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { verifyMessage } from 'ethers/lib/utils';
-import Head from 'next/head';
-import Image from 'next/image';
-import { useAccount, useSignMessage } from 'wagmi';
+} from "@huddle01/auth";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { verifyMessage } from "ethers/lib/utils";
+import Head from "next/head";
+import Image from "next/image";
+import { useAccount, useSignMessage } from "wagmi";
 
-import Brand from '@/components/Brand/Brand';
-import styles from '@/styles/Home.module.css';
+import Brand from "@/components/Brand/Brand";
+import styles from "@/styles/Home.module.css";
 
 export default function Home() {
-  const [recoveredAddress, setRecoveredAddress] = useState('');
-  const [message, setMessage] = useState<string>('');
-  const [accessToken, setAccessToken] = useState<string>('');
+  const [recoveredAddress, setRecoveredAddress] = useState("");
+  const [message, setMessage] = useState<string>("");
+  const [accessToken, setAccessToken] = useState<string>("");
 
   const {
     data: signature,
@@ -105,14 +105,14 @@ export default function Home() {
             <div className="flex gap-4">
               <button
                 className={
-                  'bg-zinc-500/95 hover:opacity-75  px-3 py-2 rounded-lg'
+                  "bg-zinc-500/95 hover:opacity-75  px-3 py-2 rounded-lg"
                 }
                 onClick={async () => {
                   if (address) {
                     const { message: _message } = await getMessage(address);
 
                     setMessage(_message);
-                  } else console.log('no address', { address });
+                  } else console.log("no address", { address });
                 }}
               >
                 getMessage()
@@ -120,7 +120,7 @@ export default function Home() {
 
               <button
                 className={
-                  'bg-zinc-500/95 hover:opacity-75  px-3 py-2 rounded-lg'
+                  "bg-zinc-500/95 hover:opacity-75  px-3 py-2 rounded-lg"
                 }
                 onClick={async () => {
                   signMessage({ message });
@@ -130,7 +130,7 @@ export default function Home() {
               </button>
               <button
                 className={
-                  'bg-zinc-500/95 hover:opacity-75  px-3 py-2 rounded-lg'
+                  "bg-zinc-500/95 hover:opacity-75  px-3 py-2 rounded-lg"
                 }
                 onClick={async () => {
                   if (signature && address) {
@@ -161,21 +161,21 @@ export default function Home() {
             <div className="flex gap-4">
               <button
                 className={
-                  'bg-green-600 hover:opacity-75  px-3 py-2 rounded-lg'
+                  "bg-green-600 hover:opacity-75  px-3 py-2 rounded-lg"
                 }
                 onClick={async () => {
                   if (address) {
                     const { message: _message } = await getLensMessage(address);
 
                     setMessage(_message);
-                  } else console.log('no address', { address });
+                  } else console.log("no address", { address });
                 }}
               >
                 getLensMessage()
               </button>
               <button
                 className={
-                  'bg-zinc-500/95 hover:opacity-75  px-3 py-2 rounded-lg'
+                  "bg-zinc-500/95 hover:opacity-75  px-3 py-2 rounded-lg"
                 }
                 onClick={async () => {
                   signMessage({ message });
@@ -185,7 +185,7 @@ export default function Home() {
               </button>
               <button
                 className={
-                  'bg-green-600 hover:opacity-75  px-3 py-2 rounded-lg'
+                  "bg-green-600 hover:opacity-75  px-3 py-2 rounded-lg"
                 }
                 onClick={async () => {
                   if (signature && address) {

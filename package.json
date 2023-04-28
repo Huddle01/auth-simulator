@@ -1,5 +1,5 @@
 {
-  "name": "next-token-gating-example",
+  "name": "auth-simulator",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@huddle01/token-gating": "^0.0.3",
+    "@huddle01/auth": "^0.0.1",
     "@rainbow-me/rainbowkit": "^0.12.5",
     "@types/node": "18.15.11",
     "@types/react": "18.0.32",
